@@ -7,6 +7,8 @@
  - npm
  - Docker
 
+Suggest using Gitpod - https://gitpod.io/#https://github.com/HortPlus-NZ/fullstack-coding-challenge
+
 ## Development
 
 ### Running the application
