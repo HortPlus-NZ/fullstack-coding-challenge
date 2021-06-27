@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { Container, Row, Col, Card, Spinner } from 'react-bootstrap';
 import ReactDOM from 'react-dom';
+import { Container, Row, Col, Card, Spinner } from 'react-bootstrap';
+import Station from './Station';
 
-const Example = () => {
+const Stations = () => {
   const [stations, setStations] = useState([]);
   const [loading, setLoading] = useState(false);
 
@@ -41,12 +42,7 @@ const Example = () => {
       ) : stations.map((station) => (
         <Row key={station.id} className='my-3'>
           <Col>
-            <Card>
-              <Card.Header>{station.name}</Card.Header>
-              <Card.Body>
-                {station.latitude}, {station.longitude}
-              </Card.Body>
-            </Card>
+            <Station station={station} />
           </Col>
         </Row>
       ))}
@@ -54,8 +50,8 @@ const Example = () => {
   );
 }
 
-export default Example;
+export default Stations;
 
-if (document.getElementById('example')) {
-  ReactDOM.render(<Example />, document.getElementById('example'));
+if (document.getElementById('root')) {
+  ReactDOM.render(<Stations />, document.getElementById('root'));
 }

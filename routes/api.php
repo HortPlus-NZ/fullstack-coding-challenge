@@ -19,4 +19,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::resource('stations', StationController::class);
+Route::resource('stations', StationController::class)
+    // Don't include forms since where are using a react app
+    ->except(['create', 'edit']);

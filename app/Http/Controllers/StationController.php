@@ -18,16 +18,6 @@ class StationController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -35,7 +25,7 @@ class StationController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        abort(501);
     }
 
     /**
@@ -46,18 +36,7 @@ class StationController extends Controller
      */
     public function show($id)
     {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
+        return Station::find($id);
     }
 
     /**
@@ -69,7 +48,7 @@ class StationController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        abort(501);
     }
 
     /**
@@ -80,6 +59,6 @@ class StationController extends Controller
      */
     public function destroy($id)
     {
-        //
+        abort(501);
     }
 }

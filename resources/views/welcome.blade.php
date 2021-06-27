@@ -22,7 +22,7 @@
     </head>
     <body class="antialiased">
         <!-- React root DOM -->
-        <div id="example">
+        <div id="root">
         </div>
 
         <!-- React JS -->
