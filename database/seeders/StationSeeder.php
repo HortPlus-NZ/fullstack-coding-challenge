@@ -21,7 +21,7 @@ class StationSeeder extends Seeder
         ]);
 
         DB::table('stations')->insert([
-            'name' => 'Test Station One',
+            'name' => 'Test Station Two',
             'latitude' => -39.87859,
             'longitude' => 176.43221
         ]);

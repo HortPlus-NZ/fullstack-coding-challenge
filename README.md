@@ -13,12 +13,20 @@
 
 #### Backend
 
+Create a `.env` file using the example
+
 Starting the backend:
 
 ```bash
 composer install
 npm install
 ./vendor/bin/sail up -d
+./vendor/bin/sail artisan key:generate
+```
+
+Update `.env` file
+```
+APP_URL={your app URL}
 ```
 
 Stopping the backend:
