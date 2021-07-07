@@ -49,6 +49,7 @@ npm run watch
 ```
 
 In the case of gitpod you should be able to navigate to ```https://5000-kumquat-dove-w9otk2hh.ws-us11.gitpod.io/``` to view the front end output.
+  
 <img width="1171" alt="Screen Shot 2021-07-07 at 3 21 50 PM" src="https://user-images.githubusercontent.com/12945777/124695375-2d3b7a00-df37-11eb-8d1f-555a9d81e9ff.png">
 
 #### Database
