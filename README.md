@@ -32,6 +32,8 @@ APP_URL={your app URL}
 ```
 In the case of gitpod this will be something like ```https://5000-kumquat-dove-w9otk2hh.ws-us11.gitpod.io/``` where 5000- refers to the port number.
 
+--
+
 Stopping the backend:
 
 ```bash
