@@ -1,69 +1,64 @@
 # HortPlus Full Stack Coding Challenge
+This is a quick coding challange that you can get setup using [GitPod](gitpod.io). It runs a PHP Laravel backend API and a ReactJS frontend. The repo comes with everything you need to get the website up and running, follow the **Setup** instructions below to get up and running in 30 minutes.
 
-## Requirements
+## Setup
+You only need to do this setup once.
 
- - PHP
- - Composer
- - npm
- - Docker
+**Step 1: GitPod**   
+Sign up for [GitPod](gitpod.io) a free cloud based IDE - All the instructions that follow will be based around using GitPod.
 
-Suggest using Gitpod - https://gitpod.io/#https://github.com/HortPlus-NZ/fullstack-coding-challenge
+**Step 2: Setup Repo**   
+Get the challange setup on your GitPod account. This is as simple as adding this repo to the end of the url with a `#` eg:
+https://gitpod.io/#https://github.com/HortPlus-NZ/fullstack-coding-challenge
 
-## Development
+This will create a new workspace in your GitPod account and generate a custom domain name for you eg `https://yellow-seahorse-90du6iw7.ws-us13.gitpod.io/` (note this is the url of your GitPod workspace, yours will be different to this example)
 
-### Running the application
+**Step 3: Configure**   
+The challange uses environment variables and expects these in a `.env` file - note that the `.env` file is not tracked in git so you'll need to create one.
 
-#### Backend
+1. Create a new `.env` file and copy the contents of the `.env.example` file into it.
+2. Find the `APP_URL` variable and upate this from `http://localhost` to your GitPod custom domain with `5000-` preprended eg `https://5000-yellow-seahorse-90du6iw7.ws-us13.gitpod.io/` (5000- refers to the port number)
+3. From the terminal, execute the following commpands:
+   - `$ composer install` - install all the PHP packages the backand depends on.
+   - `$ npm install` - install all the Node Models the frontend depends on.
+   - `$ ./vendor/bin/sail up -d` - start the backend (note that this can take a 10+ minutes to complete)
+   - `$ ./vendor/bin/sail artisan key:generate` - generate an app key, filling in the `APP_KEY` in your `.env` file.
 
-Create a `.env` file using the example
+**Step 4: Seed Database**
+The challange comes with a database migration and seeder to get the tables and data setup for you. 
 
-Starting the backend:
+With the backend running, from the terminal, execute the following commpands:
+   - `$ ./vendor/bin/sail artisan migrate` - create the database and tables.
+   - `$ ./vendor/bin/sail artisan db:seed --class StationSeeder` - seed the tables with example data.
 
-```bash
-composer install
-npm install
-./vendor/bin/sail up -d
-./vendor/bin/sail artisan key:generate
-```
+**Step 5: Test**   
+Test that you have set everything up correctly by browsing to the app url with the port number included eg `https://5000-yellow-seahorse-90du6iw7.ws-us13.gitpod.io/` - remember this url is an example, your GitPod url will be different but should work the same.
 
-Update `.env` file
-```
-APP_URL={your app URL}
-```
-In the case of gitpod this will be something like ```https://5000-kumquat-dove-w9otk2hh.ws-us11.gitpod.io/``` where 5000- refers to the port number.
-
-Stopping the backend:
-
-```bash
-./vendor/bin/sail down
-```
-
-#### Frontend
-
-The front end is a simple ReactJS application.  
-
-The following command will automatically rebuild the frontend assets whenever you save a file, you will need to refresh the website to see the changes.
-
-```bash
-npm run watch
-```
-
-In the case of gitpod you should be able to navigate to ```https://5000-kumquat-dove-w9otk2hh.ws-us11.gitpod.io/``` to view the front end output.
-  
+You should expect to see this:   
 <img width="1171" alt="Screen Shot 2021-07-07 at 3 21 50 PM" src="https://user-images.githubusercontent.com/12945777/124695375-2d3b7a00-df37-11eb-8d1f-555a9d81e9ff.png">
 
-#### Database
+## Development
+When developing you need to start the backend and the front end.
 
-Migrate and seed the database.
+**Backend**   
+To start the backend run the command below - Note if you have just followed the setup process, the backend will already be running!
+
+```Bash
+$ ./vendor/bin/sail up -d
+```
+
+**Frontend**   
+To start the front end run the command below - this will automatically rebuild the frontend assets whenever you save a file, you will need to refresh the website to see the changes.
 
 ```bash
-./vendor/bin/sail artisan migrate
-./vendor/bin/sail artisan db:seed --class StationSeeder
+$ npm run watch
 ```
 
 ## The Task
 
-Please note that you are not expected to know this framework! You have full access to the internet and we can help you with any problems you might encounter, we are interested in your approach to solving this problem.  
+Once you have the website running there is a backend and a frontend challange.
+
+Please note that you are not expected to know this framework! Use the internet to research and we can help you with any problems you might encounter, we are interested in your approach to solving this problem.  
 
 Good Luck :)
 
