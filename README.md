@@ -1,8 +1,10 @@
 # HortPlus Full Stack Coding Challenge
-This is a quick coding challange that you can get setup using [GitPod](gitpod.io). It runs a PHP Laravel backend API and a ReactJS frontend. The repo comes with everything you need to get the website up and running, follow the **Setup** instructions below to get up and running in 30 minutes.
+This is a quick coding challange that you can get setup using [GitPod](gitpod.io). It runs a [PHP Laravel](https://laravel.com/) backend API (with [Docker](https://www.docker.com/)) and a [ReactJS](https://reactjs.org/) frontend. 
+
+The repo comes with everything you need to get the website up and running, follow the **Setup** instructions below to get up and running in 30 minutes.
 
 ## Setup
-You only need to do this setup once.
+Follow these steps to get everything setup and configured - _You only need to do this setup process once._
 
 **Step 1: GitPod**   
 Sign up for [GitPod](gitpod.io) a free cloud based IDE - All the instructions that follow will be based around using GitPod.
@@ -35,10 +37,11 @@ With the backend running, from the terminal, execute the following commpands:
 Test that you have set everything up correctly by browsing to the app url with the port number included eg `https://5000-yellow-seahorse-90du6iw7.ws-us13.gitpod.io/` - remember this url is an example, your GitPod url will be different but should work the same.
 
 You should expect to see this:   
+
 <img width="1171" alt="Screen Shot 2021-07-07 at 3 21 50 PM" src="https://user-images.githubusercontent.com/12945777/124695375-2d3b7a00-df37-11eb-8d1f-555a9d81e9ff.png">
 
 ## Development
-When developing you need to start the backend and the front end.
+When developing you need to start the backend and the frontend.
 
 **Backend**   
 To start the backend run the command below - Note if you have just followed the setup process, the backend will already be running!
@@ -47,18 +50,24 @@ To start the backend run the command below - Note if you have just followed the 
 $ ./vendor/bin/sail up -d
 ```
 
+- Models are found in `app/Models/` these use [Eloquent](https://laravel.com/docs/8.x/eloquent), an object-relational mapper (ORM) that does all the heavy lifting so the Model classes are small, sometimes empty.
+- Controlers are found in `app/Http/Controlers/`.
+- MySQL commandline access `$ ./vendor/bin/sail mysql -h localhost -u sail -ppassword password` but consider using [Database Migrations](https://laravel.com/docs/8.x/migrations#introduction)
+
 **Frontend**   
-To start the front end run the command below - this will automatically rebuild the frontend assets whenever you save a file, you will need to refresh the website to see the changes.
+To start the front end run the command below - this will automatically rebuild the frontend assets whenever you save a file, you will not need to refresh the website to see the changes.
 
 ```bash
 $ npm run watch
 ```
 
+- The ReactJS files are found in `resources/js/`.
+
 ## The Task
 
 Once you have the website running there is a backend and a frontend challange.
 
-Please note that you are not expected to know this framework! Use the internet to research and we can help you with any problems you might encounter, we are interested in your approach to solving this problem.  
+Please note that you are not expected to know this framework! Use the internet to research and we can help you with any problems you might encounter, we are interested in your approach to solving this problem and giving it a go.  
 
 Good Luck :)
 
